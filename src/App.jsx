@@ -8,7 +8,6 @@ function App() {
     <BrowserRouter>
 
       <Routes>
-
         <Route path='/' element={<Lista />} />{/* pagina principal doonde se van a cargar las tareas */}
 
       </Routes>

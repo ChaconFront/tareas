@@ -5,7 +5,7 @@ const Tareas = ({ lista }) => {
 
     return (
         <div>
-            <h1>Tabla de datos</h1>
+            <h3>Tabla de datos</h3>
             <table>
                 <thead>
                     <tr>

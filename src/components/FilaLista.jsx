@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Fila = (el) => {
+const Fila = ({el}) => {
     const { id, Tarea } = el;
     return (
 
