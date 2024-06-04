@@ -7,16 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "fake-api":"json-server --watch src/baseDatos/db.json",
+    "fake-api": "json-server --watch src/baseDatos/db.json",
     "preview": "vite preview"
-   
   },
-
   "dependencies": {
     "json-server": "^1.0.0-beta.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

@@ -1,15 +1,14 @@
 import React from 'react'
-
-const Fila = ({el}) => {
+import { Link } from 'react-router-dom';
+const Fila = ({ el, setDataToEdit,deleteData }) => {
     const { id, Tarea } = el;
     return (
 
         <tr>
-            <td>{id}</td>
             <td>{Tarea}</td>
             <td>
-                <button >Editar</button>
-                <button >Eliminar</button>
+                <button onClick={() => { setDataToEdit(el) }}><Link to={`/Formulario`}>editar</Link></button>
+                <button  onClick={()=>{deleteData(id)}} >Eliminar</button>
             </td>
         </tr>
     );
