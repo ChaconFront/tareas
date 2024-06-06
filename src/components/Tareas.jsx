@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Fila from './FilaLista';
-const Tareas = ({ lista, setDataToEdit,deleteData }) => {
+import ListaContext from '../context/ListaContext';
+
+const Tareas = () => {
+    const{lista}=useContext(ListaContext);
     return (
         <div>
             <h3>Tabla de datos</h3>
@@ -8,13 +11,13 @@ const Tareas = ({ lista, setDataToEdit,deleteData }) => {
                 <thead>
                     <tr>
 
-                        <th>nombre</th>
+                        <th>Tareas</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {(lista.map((el) => <Fila key={el.id} el={el} setDataToEdit={setDataToEdit} deleteData={deleteData} />))}
+                    {(lista.map((el) => <Fila key={el.id} el={el} />))}
                 </tbody>
             </table>
         </div>

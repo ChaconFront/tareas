@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-const Fila = ({ el, setDataToEdit,deleteData }) => {
+import ListaContext from '../context/ListaContext';
+const Fila = ({ el}) => {
     const { id, Tarea } = el;
+    const{setDataToEdit,deleteData}=useContext(ListaContext);
+
     return (
 
         <tr>

@@ -2,7 +2,7 @@
   "Tareas": [
     {
       "id": "1717534039214",
-      "Tarea": "hola nueva tarea"
+      "Tarea": "hola mi nombre es Jorge el tanque"
     },
     {
       "id": "1717534061942",
@@ -17,8 +17,16 @@
       "Tarea": "soy el gerente del cajero"
     },
     {
-      "id": "1717534105530",
-      "Tarea": "muchas gracias"
+      "id": "1717647023644",
+      "Tarea": "hola nueva que vola"
+    },
+    {
+      "id": "1717647055386",
+      "Tarea": "comer despues de las 7"
+    },
+    {
+      "id": "1717648134746",
+      "Tarea": "hola nueva tarea"
     }
   ]
 }

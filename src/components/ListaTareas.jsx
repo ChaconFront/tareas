@@ -1,10 +1,14 @@
-import React, { useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import Tareas from './Tareas';
 import { Link } from 'react-router-dom';
+import ListaContext from '../context/ListaContext';
+import { Message } from './message';
 
-export function Lista({ lista, setLista, setDataToEdit,deleteData,error }) {
+export function Lista() {
+    const { lista, setLista, error } = useContext(ListaContext);
+
     let url = "http://localhost:3000/Tareas";
-    useEffect(() => {//aqui es donde traemos los datos de la peticion.
+    useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch(url);
@@ -25,10 +29,10 @@ export function Lista({ lista, setLista, setDataToEdit,deleteData,error }) {
             <h1>Programacion de Tareas Diarias</h1>
             <section>
                 <div>
-                    {lista && <Tareas lista={lista} setDataToEdit={setDataToEdit} deleteData={deleteData} />}
+                    {lista && <Tareas />}
                 </div>
                 <div>
-                {error && <Message msg={`Error ${error.status}: ${error.statusText} `} bgColor="#dc3545" />}
+                    {error && <Message msg={`Error ${error.status}: ${error.statusText} `} bgColor="#dc3545" />}
                 </div>
                 <div>
                     <button>

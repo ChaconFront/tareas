@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ListaContext from '../context/ListaContext';
 
 const initialForm = {
     id: null,
     Tarea: "",
 };
 
-function Formulario({ setDataToEdit, dataToEdit, createData, updateData }) {
+function Formulario() {
+    const { setDataToEdit, dataToEdit, createData, updateData } = useContext(ListaContext);
     const [form, setForm] = useState(initialForm);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         if (dataToEdit) {
@@ -19,7 +22,7 @@ function Formulario({ setDataToEdit, dataToEdit, createData, updateData }) {
 
     }, [dataToEdit])
 
-    function haciaAtras(){
+    function haciaAtras() {
         navigate(-1)
     }
 
