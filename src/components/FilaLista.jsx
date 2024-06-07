@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import ListaContext from '../context/ListaContext';
+import { StyleButon, StyleButonEliminar, StyleLikn, StyledTd } from '../styled/StyledComponent';
 const Fila = ({ el}) => {
     const { id, Tarea } = el;
     const{setDataToEdit,deleteData}=useContext(ListaContext);
@@ -8,11 +9,11 @@ const Fila = ({ el}) => {
     return (
 
         <tr>
-            <td>{Tarea}</td>
-            <td>
-                <button onClick={() => { setDataToEdit(el) }}><Link to={`/Formulario`}>editar</Link></button>
-                <button  onClick={()=>{deleteData(id)}} >Eliminar</button>
-            </td>
+            <StyledTd>{Tarea}</StyledTd>
+            <StyledTd>
+                <StyleButon onClick={() => { setDataToEdit(el) }}><StyleLikn to={`/Formulario`}>Editar</StyleLikn></StyleButon>
+                <StyleButonEliminar  onClick={()=>{deleteData(id)}} >Eliminar</StyleButonEliminar>
+            </StyledTd>
         </tr>
     );
 }

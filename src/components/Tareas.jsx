@@ -1,26 +1,21 @@
 import React, { useContext } from 'react';
 import Fila from './FilaLista';
 import ListaContext from '../context/ListaContext';
-
+import { StyleTable, StyledTh, StyledTr } from '../styled/StyledComponent';
 const Tareas = () => {
-    const{lista}=useContext(ListaContext);
+    const { lista } = useContext(ListaContext);
     return (
-        <div>
-            <h3>Tabla de datos</h3>
-            <table>
+            <StyleTable>
                 <thead>
-                    <tr>
-
-                        <th>Tareas</th>
-                        <th>Acciones</th>
-                    </tr>
+                    <StyledTr>
+                        <StyledTh>Tareas</StyledTh>
+                        <StyledTh>Acciones</StyledTh>
+                    </StyledTr>
                 </thead>
-
                 <tbody>
                     {(lista.map((el) => <Fila key={el.id} el={el} />))}
                 </tbody>
-            </table>
-        </div>
+            </StyleTable>
     );
 }
 

@@ -3,9 +3,11 @@ import Tareas from './Tareas';
 import { Link } from 'react-router-dom';
 import ListaContext from '../context/ListaContext';
 import { Message } from './message';
+import { Button, StyleLikn, StyleMain, StyleSection} from '../styled/StyledComponent';
 
 export function Lista() {
     const { lista, setLista, error } = useContext(ListaContext);
+
 
     let url = "http://localhost:3000/Tareas";
     useEffect(() => {
@@ -24,10 +26,11 @@ export function Lista() {
         fetchData();
     }, [url]);
 
-    return (
-        <main>
+
+    return (   
+        <StyleMain>
             <h1>Programacion de Tareas Diarias</h1>
-            <section>
+            <StyleSection>
                 <div>
                     {lista && <Tareas />}
                 </div>
@@ -35,16 +38,17 @@ export function Lista() {
                     {error && <Message msg={`Error ${error.status}: ${error.statusText} `} bgColor="#dc3545" />}
                 </div>
                 <div>
-                    <button>
-                        <Link to={`/Formulario`}>Agregar</Link>
-                    </button>
+                    <Button>
+                        <StyleLikn to={`/Formulario`}>Agregar</StyleLikn>
+                    </Button>
                 </div>
 
-            </section>
+            </StyleSection>
 
 
 
-        </main>
+        </StyleMain>
+      
     );
 }
 
